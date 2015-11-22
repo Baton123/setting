@@ -76,7 +76,12 @@
         android:key="network_traffic_state"
         android:fragment="com.android.settings.crdroid.NetworkTraffic"
         android:summary="@string/network_traffic_summary"
-        android:title="@string/network_traffic_title" />	
+        android:title="@string/network_traffic_title" />
+		
+	<PreferenceScreen
+            android:key="carrierlabel"
+            android:fragment="com.android.settings.temasek.CarrierLabel"
+            android:title="@string/carrier_options" />	
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="show_su_indicator"
