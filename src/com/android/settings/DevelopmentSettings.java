@@ -24,6 +24,7 @@ import android.app.AlertDialog;
 import android.app.AppOpsManager;
 import android.app.AppOpsManager.PackageOps;
 import android.app.Dialog;
+import android.app.UiModeManager;
 import android.app.admin.DevicePolicyManager;
 import android.app.backup.IBackupManager;
 import android.bluetooth.BluetoothAdapter;
@@ -195,6 +196,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final String DEVELOPMENT_SHORTCUT_KEY = "development_shortcut";
 
+    private static final String KEY_NIGHT_MODE = "night_mode";
+
     private static final int RESULT_DEBUG_APP = 1000;
     private static final int RESULT_MOCK_LOCATION_APP = 1001;
 
@@ -290,6 +293,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private SwitchPreference mUpdateRecovery;
 
     private SwitchPreference mDevelopmentShortcut;
+
+    private DropDownPreference mNightModePreference;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -484,6 +489,27 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             removePreference(KEY_COLOR_MODE);
             mColorModePreference = null;
         }
+
+        mNightModePreference = (DropDownPreference) findPreference(KEY_NIGHT_MODE);
+        final UiModeManager uiManager = (UiModeManager) getSystemService(
+                Context.UI_MODE_SERVICE);
+        final int currentNightMode = uiManager.getNightMode();
+        mNightModePreference.setSelectedValue(String.valueOf(currentNightMode));
+        mNightModePreference.setCallback(new DropDownPreference.Callback() {
+            @Override
+            public boolean onItemSelected(int pos, Object newValue) {
+                try {
+                    final int value = Integer.parseInt((String) newValue);
+                    final UiModeManager uiManager = (UiModeManager) getSystemService(
+                            Context.UI_MODE_SERVICE);
+                    uiManager.setNightMode(value);
+                    return true;
+                } catch (NumberFormatException e) {
+                    Log.e(TAG, "could not persist night mode setting", e);
+                    return false;
+                }
+            }
+        });
     }
 
     private ListPreference addListPreference(String prefKey) {
