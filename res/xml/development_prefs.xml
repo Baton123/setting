@@ -97,11 +97,20 @@
         android:summary="@string/picture_color_mode_desc"
         android:persistent="false" />
 
+<<<<<<< HEAD
     <SwitchPreference
         android:key="color_temperature"
         android:title="@string/color_temperature"
         android:summary="@string/color_temperature_desc"
         android:persistent="false" />
+=======
+    <com.android.settings.DropDownPreference
+        android:key="night_mode"
+        android:title="@string/night_mode_title"
+        android:summary="@string/night_mode_summary"
+        android:entries="@array/night_mode_entries"
+        android:entryValues="@array/night_mode_values" />
+>>>>>>> 3cfbca8... Revert "Remove theme setting DO NOT MERGE"
 
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
