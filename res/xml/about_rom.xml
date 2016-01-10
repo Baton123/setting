@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/about_me_settings_title"
+	xmlns:me="http://schemas.android.com/apk/res/com.android.settings">
+                
+ 	<PreferenceCategory
+		android:key="links"
+		android:title="@string/me"> 
+
+		<Preference
+			android:key="me_website"
+			android:title="@string/me_website_title"
+			android:summary="@string/me_website_summary" />
+			
+		<Preference
+			android:key="me_twitter"
+			android:title="@string/me_twitter_title"
+			android:summary="@string/me_twitter_summary" />	
+
+		<Preference
+			android:key="me_facebook"
+			android:title="@string/me_facebook_title"
+			android:summary="@string/me_facebook_summary" />
+			
+		<Preference
+			android:key="me_google_plus"
+			android:title="@string/me_google_plus_title"
+			android:summary="@string/me_google_plus_summary" />
+                			
+</PreferenceCategory>		
+
+</PreferenceScreen>

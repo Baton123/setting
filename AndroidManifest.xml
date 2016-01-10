@@ -6,6 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="21" />
+	<uses-library android:name="org.apache.http.legacy" android:required="false" />	
 
     <original-package android:name="com.android.settings" />
 
@@ -175,6 +176,8 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
         </activity>
+
+        <activity android:name=".me.About" />
 
         <activity android:name="AirplaneModeVoiceActivity"
                 android:label="@string/wireless_networks_settings_title"
