@@ -43,6 +43,22 @@
 
     <!-- NFC PreferenceCategory title -->
     <string name="nfc_title_category">NFC</string>
+	
+    <!-- About me -->    
+    <string name="about_me_settings_title">About me</string>
+    <string name="about_me">About me</string>
+    <string name="about_me_summary">@null</string>
+    <string name="about_r0m_summary">My social profiles</string>
+	<string name="me">Links</string>
+    <string name="me_website_title">Website</string>
+    <string name="me_website_summary">My personal site carrying my works</string>
+	<string name="me_twitter_title">Twitter</string>
+    <string name="me_twitter_summary">Tweet to me</string>
+    <string name="me_facebook_title">Facebook</string>
+    <string name="me_facebook_summary">Ping me</string>
+    <string name="me_google_plus_title">Google+</string>
+    <string name="me_google_plus_summary">Hangout with me</string>
+	<string name="title_about">About Santhosh</string>
 
     <!-- About phone screen, CyanogenMod version -->
     <string name="mod_version">CyanogenMod version</string>
