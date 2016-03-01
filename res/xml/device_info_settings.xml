@@ -18,6 +18,10 @@
 	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/about_settings">
 		
+		<!-- Sandy Logo Header -->
+        <PreferenceScreen android:key="sandylogo"
+                android:layout="@layout/about_logo_row" />
+				
         <!-- About me -->        
        <PreferenceScreen
         android:key="about_rom"
